@@ -1,6 +1,6 @@
 =begin
-#an array of students
-students = [
+#an array of students for testing
+students_array = [
   {name: "Dr. Hannibal Lecter", cohort: :november},
   {name: "Darth Vader", cohort: :november},
   {name: "Nurse Ratched", cohort: :november},
@@ -39,6 +39,32 @@ def print_header
 end
 
 def print_list_of(students)
+=begin
+#Step 8, exercise 1
+  students.each_with_index do |student, index|
+    puts "#{index + 1}. #{student[:name]} (#{student[:cohort].capitalize} cohort)"
+  end
+#Step 8, exercise 2
+  puts "Show students beginnig with the letter..."
+  letter = gets.chomp.capitalize
+  students.each do |student|
+    if student[:name][0] == letter
+      puts "#{student[:name]} (#{student[:cohort].capitalize} cohort)"
+    end
+  end
+#Step 8, exercise 3
+  students.each do |student|
+    if student[:name].length > 11
+      puts "#{student[:name]} (#{student[:cohort].capitalize} cohort)"
+    end
+  end
+#Step 8, exercise 4
+  count = 0
+  while students[count] != nil
+    puts "#{students[count][:name]} (#{students[count][:cohort].capitalize} cohort)"
+    count = count + 1
+  end
+=end
   students.each do |student|
     puts "#{student[:name]} (#{student[:cohort].capitalize} cohort)"
   end
@@ -48,7 +74,7 @@ def print_footer_about(names)
   puts "Overall, we have #{names.count} great students"
 end
 
-students = input_students
+students = students_array
 print_header
 print_list_of(students)
 print_footer_about(students)
