@@ -64,6 +64,8 @@ def print_list_of(students)
     puts "#{students[count][:name]} (#{students[count][:cohort].capitalize} cohort)"
     count = count + 1
   end
+#Step 8, exercise 6, 7, 8, 10
+#Step 11 == complete
 =end
   students.each do |student|
     puts "#{student[:name]} (#{student[:cohort].capitalize} cohort)"
@@ -74,7 +76,7 @@ def print_footer_about(names)
   puts "Overall, we have #{names.count} great students"
 end
 
-students = students_array
+students = input_students
 print_header
 print_list_of(students)
 print_footer_about(students)
